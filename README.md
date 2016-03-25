@@ -3,7 +3,7 @@ Guia Practica y Ejemplos de los tipos de Selectores de CSS3.
 
 ## Descarga/Clone
 ```
-git clone https://github.com/joelengt/filtros.git
+git clone https://github.com/joelengt/selectorescss3.git
 ```
 
 ## Start
