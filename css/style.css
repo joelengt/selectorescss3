@@ -1,0 +1,421 @@
+body{
+	font-family: 'Arial', sans-serif;
+  text-align: left;
+  padding: 3rem;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+div .MyClassBox{
+	color: red;
+}
+
+div #MyIdBox{
+	color:blue;
+}
+
+div strong p{
+	color: olive;
+}
+
+
+/*Selectores por Relacion*/
+
+/*Selector Descenten*/
+
+.ejemplo1 p{
+	color: orange;
+}
+
+/*Selector de Relacion en el primer nivel*/
+/*solo los p de la primera capa*/
+.ejemplo2 > p{
+	color: red;
+}
+
+
+/*}Selector Adyacente De Hermanos*/
+
+/* Dando estilos al primer hermano siguiente de h1*/
+.padre h1 + h2{
+  color: #1397EF;
+}
+
+/*Nota: Tal vez esto pueda ser un poco confuso, pero te lo explico para que lo entiendas.
+ Lo que está pasando es que tenemos un elemento padre el cual tiene tres hijos hijo1, 
+  hijo2 e hijo3, estos al ser hijos del mismo padre se convierten en hermanos y lo que hacemos 
+  con el signo de + es darle estilos al hermano más cercano de  hijo1 ósea hijo2 es por eso que
+   hijo3 no se ve afectado.*/
+
+
+ /*Selector General de Hermanos*/
+/* Dando estilos a todos los hermanos de h1 */
+ .padre2 h1 ~ h2 {
+ 	color: orange;
+ }	
+
+ p[pato] {
+ 	color: orange;
+ }
+
+ p[camisa="muajaja"] {
+ 	color: red;
+ }
+
+ p[gato~="cantante"]{
+ 	color: purple;
+ }
+
+
+p[gato|="corre"]{
+ 	color: orange;
+ }
+
+
+p[gato^="genial"]{
+	color: green;
+}
+
+
+p[gato$="bebe"]{
+	color: purple;
+}
+
+p[perro*="genial"]{
+  color: red;
+}
+
+
+.Saludo1::before{	
+	content:" ! ";
+	color: red;
+}
+
+.Saludo1::after{
+	content:"¡";
+	color: purple;
+}
+
+.title2::first-letter{
+	color: purple;
+	text-transform: uppercase;
+}
+
+.parrafo2::first-line{
+	color: orange;
+}
+
+/*.select1::-moz-selection{   */   /*Para Mozilla*/
+.select1::selection{
+  background: #118CF0;
+  color: salmon;
+  text-shadow: 2px 2px 5px black;
+}
+
+
+
+/* Estilos por Default*/
+.link-active{
+  text-decoration: none;
+  color: #118CF0;
+  font-size: 2rem;
+}
+
+/* active */
+.link-active:active{
+  background: salmon;
+  color: white;
+}
+
+
+/*checked*/
+
+.cuadrado{
+  height: 0;
+  width: 0;
+  /* background: #118CF0; */
+  /* transition: 0.3s; */
+  margin: 10px 0;
+  border-top: 100px solid #FBFF00;
+  border-bottom: 100px solid #FBFF00;
+  border-right: 100px solid transparent;
+  border-left: 100px solid #FBFF00;
+  /* margin: 0 auto; */
+  position: relative;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.cuadrado::before{
+	content:"";
+	display: block;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: red;
+	right: 0px;
+	left: -25px;
+	top: -25px;
+	bottom: 0px;
+	margin: 0 auto;
+
+}
+
+.darCheck:checked + .cuadrado{
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: yellow;
+}
+
+
+input:disabled{
+	background: salmon;
+}
+
+p:empty{
+  background: olive;
+  height: 50px;
+  width: 100px;
+}
+
+.Ha-form1-ya input:enabled{
+	background: yellow;	
+}
+
+.Primer-elemento p:first-child{
+	color: red;
+}
+
+.box-first-of-type :first-of-type{
+  color: #118CF0;
+}
+
+.DarFocus:focus{
+  background: orange;
+  padding: 10px;
+  border: 3px solid black;
+}
+
+
+/* Estilos por default*/
+.pasarRaton{
+  color: #118CF0;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+/* Hover */
+.pasarRaton:hover{
+  color: red;
+  text-shadow: 2px 2px 10px black;
+}
+
+/* Estilos por default */
+.Class-box{
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+  border: 4px solid red;
+  background: white;
+}
+
+/* in-range*/
+.Class-box:in-range{
+  border-color: green;
+}
+
+/* Estilos por default */
+.Validar{
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+  border: 4px solid black
+}
+
+/* Invalid */
+.Ha-validar input:invalid{
+  border-color: red;
+}
+
+/*Le da atributo al elemento al que se le pase al lang(), para idioma*/
+.Box2:lang(en){
+  color: red;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+
+.Fill-box p:last-child{
+  color: #118CF0;
+}
+/*Igual de first-of-type, solo que este toma los ultimos. Coje las ultimas muestras de typos de elementos que tengan*/
+.Box-data :last-of-type{
+  color: #118CF0;
+}
+
+
+
+/*Estilos por default*/
+.Enlace2{
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+}
+
+/* Link */
+.Enlace2:link{
+  background: green;
+}
+/*
+.Enlace2:visited{
+  background: red;
+}
+*/
+
+
+/*con :note(selector)  todos menos ese selector adoptan una propiedad*/
+.ClaseNot strong{
+	color: red;
+}
+
+.ClaseNot:not(strong){
+	color:green;
+}
+
+/*nth-child()*/
+.Data-nth-child p:nth-child(2){
+  color: #118CF0;
+}
+
+.Data-last-nth-child p:nth-last-child(3){
+	color: orange;
+}
+
+.Data-nth-of-type :nth-of-type(3){
+  color: #118CF0;
+}
+
+.Ha-class p:only-child{
+  color: #118CF0;
+}
+
+.Ha-only-of-type :only-of-type{
+  color: #118CF0;
+}
+
+.HA-form-into :optional{
+  background: olive;
+  border: 3px solid orange;
+}
+
+
+/*out-of-range*/
+.Ha-out-range input{
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+  border: 4px solid black
+}
+
+/* out-of-range*/
+.Ha-out-range input:out-of-range{
+  border-color: red;
+}
+
+
+
+/* Predijo para firefox */
+.HA-readonly input:-moz-read-only{
+  background: #118CF0;
+}
+
+.HA-readonly input:read-only{
+  background: #118CF0;
+}
+
+
+/* Predijo para firefox */
+.Ha-OnlyLectura input:-moz-read-write{
+  background: #118CF0;
+}
+
+.Ha-OnlyLectura input:read-write{
+  background: #118CF0;
+}
+
+/*Para los input que tiene el parametros required, es decir obligatorios de llenar*/
+
+.Ha-required input:required{
+  background: #EC4F7E;
+  border: 2px solid black;
+}
+
+/*root*/
+
+:root{
+	/*background: salmon;*/
+}
+
+/* Estilos por default*/
+.Ha-target a{
+  display: inline-block;
+  text-decoration: none;
+  margin: 10px 10px;
+  color: #118CF0;
+}
+
+/* target */
+:target{
+  padding: 10px;
+  background: #EC4F7E;
+  border: 2px solid black;
+}
+
+/*Valid  para form o input*/
+
+/* Estilos por default */
+.HA-el-valid input{
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+  border: 4px solid black
+}
+
+/* Valid */
+.HA-el-valid  input:valid{
+  border-color: green;
+}
+/*invalid*/
+.HA-el-valid  input:invalid{
+  border-color: red;
+}
+
+
+/*Link visited*/
+
+
+/*Estilos por default*/
+.Ha-link-visited a{
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+}
+
+/* Link */
+.Ha-link-visited a:link{
+  background: green;
+}
+
+/* visited */
+.Ha-link-visited a:visited{
+  background: blue;
+}

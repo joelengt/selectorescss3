@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selectores CSS</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"/>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<header>
+		<h1>Selectores y Pseudo-Selectores CSS</h1>
+	</header>
+	<h1>1) Selectores CSS</h1>
+	<h2>Selectores Basicos</h2>
+	<div>
+		<p class="MyClassBox">
+			las clases con class="MyClassBox", <strong>.MyClassBox{}</strong>
+		</p>
+		<p id="MyIdBox">
+			las clases con id="MyIdBox", <strong>#MyIdBox{}</strong>
+		</p>
+		<strong>
+			<p>
+				las clases con etiquetas nativas p, h1, span, <strong>p{}</strong>
+			</p>
+		</strong>
+	</div>
+
+	<br>
+	<br>
+
+	<h1>2) Selectores Basados En Relaciones</h1>
+
+	<br>
+	<h3> > Selector Descendente</h3>
+	<p>Afecta a todas las referencia dentro de la etiqueta sin importar el nivel</p>
+
+	<div class="ejemplo1">
+		<p>Hola1</p>
+		<p>Hola2</p>
+		<span>
+			<p>saludos1</p>
+			<p>saludos2</p>
+			<p>saludos3</p>
+		</span>
+		<p>Hola3</p>
+
+	</div>
+
+	<br>
+	<br>
+
+	<h3> > Selector de Hijo</h3>
+	<p>Afecta a todas las referencia dentro de la etiqueta del primer nivel
+	<strong> usamos .ejemplo2 > p</strong></p>
+
+	<div class="ejemplo2">
+		<p>Hola1</p>
+		<p>Hola2</p>
+		<span>
+			<p>saludos1</p>
+			<p>saludos2</p>
+			<p>saludos3</p>
+		</span>
+		<p>Hola3</p>
+
+	</div>		
+
+	<h3> > Selector Adyacente de Hermanos</h3>
+	<p>Afectamos al Primer hermanos Adyacente siguiente, para darle estilos <strong> usamos .padre h1 + h2 </strong></p>
+
+	<div class="padre">
+	  
+	  <!-- Hijos -->
+	  <h1 class="hijo1">Hola, soy el hijo 1</h1>
+	  <h2 class="hijo2">Hola, soy el hijo 2</h2>
+	  <h2 class="hijo3">Hola, soy el hijo 3</h2>
+	  <h2 class="hijo4">Hola, soy el hijo 4</h2>
+
+	  
+	</div>
+	<br>
+	<br>
+	
+	<h3> > Selector General De Hermanos</h3>
+	<p>Afectamos a Todos los hermanos Adyacentes siguientes, para darle estilos <strong> usamos .padre h1 ~ h2 </strong></p>
+	<div class="padre2">
+	  
+	  <!-- Hijos -->
+	  <h1 class="hijo1">Hola, soy el hijo 1</h1>
+	  <h2 class="hijo2">Hola, soy el hijo 2</h2>
+	  <h2 class="hijo3">Hola, soy el hijo 3</h2>
+	  <span>
+		  <h2 class="hijo4">Hola, soy el hijo Del sigueinte nivel</h2>
+	  </span>
+	  <h2 class="hijo4">Hola, soy el hijo 4</h2>
+	  <h2 class="hijo5">Hola, soy el hijo 5</h2>
+
+	  
+	</div>
+
+	<h1>3) Selectores de Atributo</h1>
+	<p>Los selectores de atributo dan estilos a un elemento (s) dependiendo de su atributo y/o de su valor, estos atributos pueden ser que ya estén especificados o igual nosotros podemos crear los nuestros.</p>
+
+	<strong>Los selectores de atributo en la etiquedas, son: id, class,type, data- pero podemos colocar el que sea, tambien tienen valor, : class="MyClass", pepito="muaja"</strong>
+	<p>Con <strong>p[camisa]</strong> podemos afectar a su contenido</p>
+	
+	<br>
+
+	<h3>p[pato]</h3>
+	<p pato>Saludos</p>
+
+	<br>
+	
+	<h3>p[camisa="muajaja"]</h3>
+	<p camisa="muajaja">Saludos Mundo</p>
+
+	<br>
+
+	<h3>[gato~=cantante]</h3>
+	<p>
+	Da estilos a los elementos que tiene el atributo gato y que entre todos sus valores contenga el valor cantante (Dichos valores separados por un espacio).
+	</p>
+	<p gato="cantante">el gato canta</p>
+	<p gato="no-cantante">el gato NO canta</p>
+	<p gato="come cantante">el gato canta</p>
+	<p gato="cantante pescado">el gato canta</p>
+
+	<br>
+
+	<h3>[gato|=corre]</h3>
+	<p>
+		Da estilos a los elementos que tiene el atributo gato y que el valor sea una palabra separada por guiones, pero que empiezan con la palabra corre .
+	</p>
+	<p gato="corre">gato es corre</p>
+	<p gato="corre-yes">gato es corre</p>
+	<p gato="corre rapido">gato es corre</p>
+	<p gato="si-corre">gato es corre</p>
+	<p gato="si corre">gato es corre</p>
+	
+	<br>
+
+	<h3>[gato^=genial]</h3>
+	<p>Da estilos a los elementos que tienen el atributo gato y que entre todos sus valores el primero sea la palabra genial</p>
+
+	<p gato="genial divertido">gato es genial y divertido</p>
+	<p gato="genial-divertido">gato es genial y divertido</p>
+	<p gato="divertido genial">gato es divertido y genial</p>
+	<p gato="divertido-genial">gato es divertido y genial</p>
+
+	<br>
+	
+	<h3>[gato$=bebe]</h3>
+	<p>Da estilos a los elementos que tienen el atributo gato y que entre todos sus valores el último sea la palabra bebe</p>
+
+	<p gato="bebe divertido">gato es genial y divertido</p>
+	<p gato="bebe-divertido">gato es genial y divertido</p>
+	<p gato="divertido bebe">gato es divertido y genial</p>
+	<p gato="divertido-bebe">gato es diertido y genial</p>	
+	
+	<br>
+	<h3>[perro*=genial]</h3>
+	<p>Da estilos a los elementos que tienen el atributo perro y que en el nombre de su valor contenga la palabra genial</p>
+
+	<p perro="genial divertido">perro es genial y divertido</p>
+	<p perro="genial-divertido">perro es genial y divertido</p>
+	<p perro="divertido genial">perro es divertido y genial</p>
+	<p perro="divertido-genial">perro es divertido y genial</p>
+	<p perro="divertido genial amigable">perro es divertido, genial y amigable</p>
+	<p perro="divertidogenialamigable">perro es divertidogenialamigable</p>
+
+	<h1>4) Pseudo Selectores</h1>
+	<p> los más interesantes y útiles, además de que son bastantes, los pseudo selectores de dividen en dos partes, <strong>pseudo-elementos y pseudo-clases</strong>.</p>
+
+	<br>
+
+	<h2>> Pseudo-elementos</h2>
+	<p>Los pseudo-elementos son selectores que físicamente no existen en el HTML pero que lógicamente si están con CSS.</p>
+	
+	<br>
+	<a href="#">::after</a>
+	<p>
+		El pseudo-elemento :after se utiliza junto con la propiedad content en el CSS, para añadir contenido después de un elemento.
+	</p>
+
+	<br>
+
+	<a href="#">::before</a>
+	<p>
+		El pseudo-elemento :before se utiliza junto con la propiedad content en el CSS, para añadir contenido antes de un elemento.
+	</p>
+
+	<h2 class="Saludo1">Good Morning</h2>
+	<br>
+
+	<a href="#">::first-letter</a>
+	<p>El pseudo-elemento first-letter selecciona la primera letra de la primera línea de texto de algún elemento.</p>
+
+	<br>
+
+	<a href="#">::first-line</a>
+	<p>El pseudo- elemento first-line selecciona la primera línea de texto de algún elemento.
+	</p>
+
+	<br>
+
+	<h1 class="title2">hola</h1>
+
+	<p class="parrafo2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi eligendi commodi corporis dicta amet, mollitia cupiditate totam ipsum velit quo aspernatur maiores perferendis vero molestias. Officia optio eveniet doloribus magnam!</p>
+	
+	<br>
+
+	<a href="#">::selection</a>
+	<br>
+	<p>El pseudo-elemento selection permite cambiar el estilo de algún texto seleccionado, solo pocas propiedades CSS pueden ser usadas con selectioncomo: <strong>color, background y text-shadow</strong>.</p>
+	
+	<br>
+	<p class="select1">Selecciona el texto para que puedas ver los estilos.</p>
+	<br>
+	<br>
+	<h2> > Pseudo-clases</h2>
+	<p>Las pseudo-clases especifican el estado de un elemento, con esto podemos interactuamos más con el usuario y definir estilos a partir de lo que la persona está haciendo.</p>
+	
+	<br>
+	<br>
+	
+	<a href="#">:active</a>
+	<p>La pseudo-clase active da estilos a un elemento que está siendo activado por el usuario, es decir, en el momento en el que da click hasta el momento que deja de dar click.
+	</p>
+	<a class="link-active"href="http://cursos.cromlu.com/"> Ir a cromlu</a>
+	
+	<br>
+	<br>
+
+	<a href="#">:checked</a>
+	<p>La pseudo-clase checkedda estilos a un elemento (radio, checkbox u option) siempre y cuando sea seleccionado o esté activo.</p>
+	<br>	
+	<p>Selecciona para cambiar cuadrado</p>
+	<input class="darCheck" type="checkbox" />
+	<div class="cuadrado"></div>
+
+	<br>
+
+	<a href="#">disabled</a>
+	<p>La pseudo-clase disabled da estilos a elementos siempre y cuando estos estén deshabilitados (Como un formulario).</p>
+	<br>
+
+	<p class="desabilitar1">Habilitado</p>
+	<input type="text" placeholder="Si"/>
+
+	<p class="desabilitar2">Deshabilitado</p>
+	<input type="text" placeholder="No" disabled/>
+
+	<br>
+	<br>
+
+	<a href="#">empty</a>
+	<p>
+		La pseudo-clase empty da estilos a elementos sin ningún nodo hijo (ningún texto dentro), es decir, que si la etiqueta tiene texto no van aplicar los estilos, pero si la etiqueta está vacía, van a aplicar los estilos.
+	</p>
+
+	<br>
+
+	<p></p>
+	<p>Un párrafo</p>
+	<p>Otro párrafo</p>
+
+	<br>
+	<br>
+
+	<a href="#">enabled</a>
+	<p>La pseudo-clase enabled es todo lo contrario a disabled y está da estilos a elementos siempre y cuando estos estén habilitados.</p>
+
+	<div class="Ha-form1-ya">
+		<p>Habilitado</p>
+		<input type="text" placeholder="Si"/>
+
+		<p>Deshabilitado</p>
+		<input type="text" disabled placeholder="No"/>
+	</div>
+	<br>
+	<br>
+
+	<a href="#">first-child</a>
+	<p>La pseudo-clase first-child da estilos a cualquier elemento que sea el primer hijo de un elemento padre.</p>
+	<br>
+
+	<div class="Primer-elemento">
+	  <p>Primer párrafo</p>
+	  <p>Segundo párrafo</p>
+	  <p>Tercer párrafo</p>
+	  <div>
+	    <p>Primer párrafo profundo</p>
+	    <p>Segundo párrafo profundo</p>
+	    <span>
+	    	<p>hola</p>
+	    	<p>hola</p>
+	    </span>
+	  </div>
+	</div>
+
+	<br>
+	<br>
+
+	<a href="#">first-of-type</a>
+	<p>La pseudo-clase first-of-type da estilos al primer hermano de su tipo en una selección de los hijos de su elemento padre.</p>
+	<p>Le da estilo al Primer elemento de cada tipo de etiqueta que salga</p>
+	<div class="box-first-of-type">
+	  <p>Primer párrafo</p>
+	  <p>Segundo párrafo</p>
+	  <p>Elemento <strong>anidado</strong></p>
+	  <span>Otro tipo de elemento</span>
+	  <h2>ha</h2>
+	  <p>Otro párrafo</p>
+	  <h2>ha</h2>
+	</div>
+
+	<a href="#">focus</a>
+	<p>La pseudo-clase focus da estilos cuando un elemento tiene la atención del usuario, ya sea con el teclado o el ratón.</p>
+
+	<p>Da click en el input para ver los estilos:</p>
+	<input class="DarFocus" type="text" />
+	<br>
+	<br>
+
+	<a href="#">hover</a>
+	<p>La pseudo-clase hover da estilos a un elemento cuando el usuario coloca el puntero sobre el.</p>
+
+	<br>
+	<a class="pasarRaton" href="#">Pasa el ratón :)</a>
+	<br>
+	<br>
+
+	<a href="#">in-range</a>
+	<p>La pseudo-clase in-range da estilos a un elemento cuando este se encuentre dentro de las limitaciones que tiene su atributo de valor. Lo estila mientras el value este dentro de min y max, buena forma para UX en formularios</p>
+
+	<input class="Class-box" type="number" min="2" max="6" value="4"/> 
+	<input class="Class-box" type="number" min="2" max="6" value="10"/>
+
+	<br>
+
+	<a href="#">invalid</a>
+	<p>La pseudo-clase invalid da estilos a un elemento (input o form) que tenga un contenido inválido según su configuración.</p>
+	<br>
+	<div class="Ha-validar">
+		<input class="Validar" type="email" placeholder="Pon un email valido" required/>
+	</div>
+	
+	<br>
+	<br>
+
+	<a href="#">lang()</a>
+	<p>La pseudo-clase lang() da estilos a un elemento con el atributo lang y el valor que se especifique.</p>
+	
+	<br>
+
+	<p class="Box2" lang="es">Español</p>
+	<p class="Box2" lang="en">Inglés</p>
+	<p class="Box2" lang="fr">Frances</p>
+		
+	<br>
+
+	<a href="#">last-child</a>
+	<p>La pseudo-clase last-child es lo contrario a first-child ya que este da estilos a cualquier elemento que sea el último hijo de un elemento padre.</p>
+	
+	<br>
+	<br>
+	
+	<div class="Fill-box">
+	  <p>Primer párrafo</p>
+	  <p>Segundo párrafo</p>
+	  <p>Tercer párrafo</p>
+	</div>
+	<br><br>
+
+	<a href="#">last-of-type</a>
+	<p>La pseudo-clase last-of-type es lo contrario a first-of-type ya que este da estilos al último hermano de su tipo en una selección de los hijos de su elemento padre.</p>
+	<br>
+
+	<div class="Box-data">
+	  <p>Primer párrafo</p>
+	  <p>Segundo párrafo</p>
+	  <p>Elemento <strong>anidado</strong></p>
+	  <span>Otro tipo de elemento</span>
+	  <p>Otro párrafo</p>
+	</div>
+
+	<br>
+	<br>
+
+	<a href="#">link</a>
+	<p>La pseudo-clase link da estilos a los enlaces que aún no han sido visitados.</p>
+	<br>
+
+	<a class="Enlace2" href="#">Link me</a>
+
+	<br>
+	<br>	
+
+	<a href="#">not()</a>
+	<p>La pseudo-clase not() da estilos a todos los elementos que no estén especificados en el selector</p>
+
+	<div class="ClaseNot">
+		<h1>H1</h1>
+		<h2>H2</h2>
+		<p>Párrafo</p>
+		<strong>Strong</strong>
+		<p>Párrafo</p>
+		<span>Span</span>
+	</div>
+
+	<br>
+	<br>
+
+	<a href="#">nth-child()</a>
+	<p>La pseudo-clase nth-child() funciona similar a first-child y last-child pero aún más potente, ya que está da estilos a un elemento o elementos según nuestra decisión.</p>
+
+	<div class="Data-nth-child">
+	  <p>Primer párrafo</p>
+	  <p>Segundo párrafo</p>
+	  <p>Tercer párrafo</p>
+	  <p>Cuarto párrafo</p>
+	</div>
+
+	<br>
+	<br>
+	<a href="#">nth-last-child()</a>
+	<p>La pseudo-clase nth-last-child() funciona similar a nth-child solo que aquí damos estilos a un elemento o elementos (Hijos) empezando desde el último.</p>
+
+	<div class="Data-last-nth-child">
+	  <p>Cuarto párrafo</p>
+	  <p>Tercer párrafo</p>
+	  <p>Segundo párrafo</p>
+	  <p>Primer párrafo</p>
+	</div>
+
+	<br>
+	<br>
+
+	<a href="#">nth-of-type()</a>
+	<p>La pseudo-clase nth-of-type() funciona similar a first-of-type y last-of-type solo que aquí damos estilos a un elemento o elementos hermanos dentro de una sección y según nuestra decisión.</p>
+	<br>
+	<div class="Data-nth-of-type">
+	  <p>Primer párrafo</p>
+	  <p>Segundo párrafo</p>
+	  <p>Elemento , </p>
+	  <strong>animado</strong>
+	  <strong>anidado</strong>
+	  <div>
+		  <strong>anidado</strong>  <!--Se toma en cuenta solo entre el mismo nivel de hermano, en este caso este elemento esta un nivel fuera del rango-->
+	  </div>
+		  <strong>anidado</strong>
+	  <span>Otro tipo de elemento</span>
+	  <span>Otro tipo de elemento</span>
+	  <span>Otro tipo de elemento</span>
+	  <p>Otro párrafo</p>
+	</div>
+
+	<br>
+	<br>
+	<a href="#">only-child</a>
+	<p>La pseudo-clase only-child da estilos a un elemento que sea el único hijo de su padre.</p>
+	<br>
+	<div class="Ha-class">
+	  <p>Primer párrafo (Hijo1)</p>
+	</div>
+
+	<div class="Ha-class">
+	  <p>Segundo párrafo (Hijo1)</p>
+	  <p>Segundo párrafo (Hijo2)</p>
+	</div>
+
+	<br>
+	<br>
+
+	<a href="#">only-of-type</a>
+	<p>La pseudo-clase only-of-type da estilos a un elemento que no tiene hermanos del tipo dato.</p>
+	<br>
+	<div class="Ha-only-of-type">
+	  <p>Primer párrafo</p>
+	  <p>Segundo párrafo</p>
+	  <p>Elemento <strong>anidado</strong></p>
+	  <span>Otro tipo de elemento</span>
+	  <p>Otro párrafo</p>
+	</div>
+
+	<br>
+	<br>
+	<a href="#">optional</a>
+	<p>La pseudo-clase optional da estilos a los elementos de formulario que son opcionales.</p>
+	<br>
+	<!--Por opcional nos referimos a los que no son requeridos forsozamente, tecnicamente hablo de los campos de formulario que NO tienen el atributo required-->
+	<p>Input opcional:</p>
+	<div class="HA-form-into">
+		<input type="text" />
+
+		<p>Input requerido</p>
+		<input type="text" required/>
+	</div>
+	
+	<br>
+	<br>
+	<a href="#">out-of-range</a>
+	<p>La pseudo-clase out-of-range es lo contrario a in-range y da estilos a un elemento cuando este se encuentre fuera de las limitaciones que tiene su atributo de valor.</p>
+	<br>
+	<div class="Ha-out-range">
+		<input type="number" min="2" max="6" value="4"/> 
+		<input type="number" min="2" max="6" value="10"/> 
+	</div>
+
+	<br>
+	<br>
+
+	<a href="#">read-only</a>
+	<p>La pseudo-clase only-of-type da estilos a los elementos de formulario que son solo Lectura.</p>
+	<br>
+	<div class="HA-readonly">
+		<p>Lectura y Escritura</p>
+		<input type="text" placeholder="Puedes escribir"/>
+
+		<p>Lectura:</p>
+		<input type="text" placeholder ="No puedes escribir" readonly />   <!-- Aqui no puedo escribir, solo leer readonly -->
+	</div>
+	
+	<br>
+	<br>
+
+	<a href="#">read-write</a>
+	<p>La pseudo-clase read-write es lo contrario a read-only y da estilos a los elementos de formulario que son solo de Escritura.</p>
+	<br>
+
+	<div class="Ha-OnlyLectura">
+		<p>Lectura y Escritura</p>
+		<input type="text" placeholder="Puedes Editar"/>
+
+		<p>Lectura:</p>
+		<input type="text" placeholder="No puedes editar" readonly />
+	</div>
+	
+	<br>
+	<br>
+
+	<a href="#">required</a>
+	<p>La pseudo-clase required da estilos a los elementos de formulario con el atributo required. Los que si o si son obligatorios llenar</p>
+	<br>
+
+	<div class="Ha-required">
+		<p>No requerido</p>
+		<input type="text" />
+
+		<p>Requerido:</p>
+		<input type="text" required />
+	</div>
+
+	<br>
+	<br>
+
+	<a href="#">root</a>
+	<p>La pseudo-clase root da estilos al elemento raíz del documento, el elemento raíz es html</p>
+	<div class="Ha-title-root">
+		<h1>Root</h1>
+		<p>:root{
+		// todos los atributos
+		}</p>
+	</div>
+
+	<br>
+	<br>
+
+	<a href="#">target</a>
+	<p>La pseudo-clase target funciona cuando tenemos un enlace y este enlace tiene una ancla, el elemento que esté vinculado es quien va a tener los estilos.</p>
+
+	<br>
+
+	<div class="Ha-target">
+		<p>Da click en un ancla:</p>
+		<a href="#primero">Ancla 1</a>
+		<a href="#segundo">Ancla 2</a>
+
+		<p id="primero">Primero</p>
+		<p id="segundo">Segundo</p>
+	</div>
+
+	<br>
+	<br>
+
+	<a href="#">valid</a>
+	<p>La pseudo-clase valid es lo contrario a ìnvalid` y da estilos a un elemento (input o form) que tenga un contenido válido según su configuración.</p>
+	<br>
+
+	<div class="HA-el-valid">
+		<input type="email" placeholder="Pon un email valido" />
+	</div>
+
+	<br>
+	<a href="#">visited</a>
+	<p>La pseudo-clase visited es lo contrario a link y da estilos a los enlaces visitados.</p>
+
+	<br>
+
+	<div class="Ha-link-visited">
+		<p>Da click:</p>
+
+		<a href="#men">Seundo link</a>
+	</div>
+</body>
+</html>
